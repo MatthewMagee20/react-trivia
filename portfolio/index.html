@@ -4,7 +4,184 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Matthew Magee | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body></body>
+  <body>
+    <nav class="navbar">
+      <div class="brand-title">
+        <a href="#home"><span>Matthew Magee</span></a>
+      </div>
+      <a href="#" class="hamburger-button">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </a>
+      <div class="menu">
+        <a href="#" onclick="closeMenu()" class="close-button">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
+        </a>
+        <div class="navbar-links">
+          <ul>
+            <li><a href="#about" onclick="closeMenu()">About</a></li>
+            <li>
+              <a href="#technologies" onclick="closeMenu()">Technologies</a>
+            </li>
+            <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="center">
+      <div class="landing">
+        <div>
+          <h2 class="animated animatedFadeInUp fadeInUp">
+            Hello, I'm <span>Matthew</span>
+          </h2>
+          <img
+            src="avatar.png"
+            class="animated animatedFadeInUp fadeInUp avatar"
+            alt="Avatar"
+          />
+        </div>
+        <div>
+          <p class="animated animatedFadeInUp fadeInUp">
+            My name is Matthew Magee. I am a recent Computer Science
+            (Infrastructure) Graduate at Technological University Dublin.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="about">
+      <h1 class="animated animatedFadeInUp fadeInUp">About Me</h1>
+      <p class="animated animatedFadeInUp fadeInUp">
+        I enjoy going to the Gym and play Gaelic Football for my local GAA club
+        in Virginia, Co. Cavan. I am currently learning React in my spare time
+        as I continue to search for employment
+      </p>
+      <p class="animated animatedFadeInUp fadeInUp">
+        I have interest in Technology, CryptoCurrency and I try my best to keep
+        up with trends in the Technology insdustry
+      </p>
+    </section>
+    <section id="technologies" class="technologies">
+      <h1>Technologies</h1>
+      <div class="flex-row">
+        <div class="col">
+          <i class="devicon-html5-plain icon"></i>
+          <p>HTML5</p>
+        </div>
+        <div class="col">
+          <i class="devicon-css3-plain colored icon"></i>
+          <p>CSS3</p>
+        </div>
+        <div class="col">
+          <i class="devicon-javascript-plain colored icon"></i>
+          <p>JavaScript</p>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="col">
+          <i class="devicon-react-original colored icon"></i>
+          <p>React</p>
+        </div>
+        <div class="col">
+          <i class="devicon-github-original colored icon"></i>
+          <p>GitHub</p>
+        </div>
+        <div class="col">
+          <i class="devicon-nodejs-plain colored icon"></i>
+          <p>NodeJs</p>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="col">
+          <i class="devicon-express-original colored icon"></i>
+          <p>ExpressJs</p>
+        </div>
+        <div class="col">
+          <i class="devicon-docker-plain colored icon"></i>
+          <p>Docker</p>
+        </div>
+        <div class="col">
+          <i class="devicon-digitalocean-plain colored icon"></i>
+          <p>Digital Ocean</p>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="col">
+          <i class="devicon-nextjs-original-wordmark colored icon"></i>
+          <p>NextJS</p>
+        </div>
+        <div class="col">
+          <i class="devicon-tailwindcss-plain colored icon"></i>
+          <p>TailwindCSS</p>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="projects">
+      <h1>Projects</h1>
+      <div class="project">
+        <h2>
+          <a href="https://lisgrey-next-frontend.vercel.app/"
+            >Lisgrey House Restaurant Web Application</a
+          >
+        </h2>
+        <p>
+          A simple web application created for a local restaurant. The NextJS
+          front end uses Static Site Generation (SSG) to fetch data from the
+          Strapi CMS/PostgrSQL Backend at build time.
+        </p>
+        <p>
+          Disclaimer: The images used in the project are not related to the
+          restaurant. They are placeholders to show how the web application may
+          look. Still a work in progress.
+        </p>
+        <div class="technologies-used">
+          <p>Technologies used:</p>
+          <ul>
+            <li>NextJS (React)</li>
+            <li>TailwindCSS</li>
+            <li>Strapi CMS</li>
+            <li>PostgreSQL</li>
+            <li>Google Maps API</li>
+            <li>Vercel (Frontend Hosting)</li>
+            <li>Render (Backend Hosting)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project">
+        <h2>Portfolio Site</h2>
+        <p>(Where you are now!)</p>
+        <div>
+          <p>
+            My portfolio site to present information about me as well as display
+            my projects
+          </p>
+        </div>
+        <div class="technologies-used">
+          <p>Technologies used:</p>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>GitHub Pages (Hosting)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script src="./script.js"></script>
+  </body>
 </html>
