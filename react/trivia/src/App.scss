@@ -1,0 +1,125 @@
+:root{
+  font-size: 16px;
+
+  --a: #243010;
+  --b: #87A330;
+  --c: #A1C349;
+  --d: #CAD593;
+  --e: #2A3C24;
+
+}
+
+nav{
+  background-color: var(--e);
+  padding: 15px 20px;
+  position: sticky;
+  width: 100%;
+
+  p{
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+
+    a{
+      text-decoration: none;
+      color: white;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.App {
+  text-align: center;
+
+  .header{
+    padding: 10px;
+
+    h2,h2,h4{
+      padding: 5px 0;
+    }
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+input,
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+section{
+  padding: 20px;
+}
+
+.form select,
+.form input {
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.question{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0px;
+
+  p{
+    padding-top: 5px;
+  }
+
+  .answers{
+    padding-top: 5px;
+    display: flex;
+    flex-direction: column;
+
+    label{
+      padding-right: 10px;
+      padding: 5px 0;
+
+      input{
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+input.button{
+  padding: 12px;
+  background-color: var(--a);
+  border-style: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+
+  &:hover{
+    background-color: var(--c);
+    color: black;
+  }
+}
+
+.question-answer{
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0px;
+
+  &.correct{
+    border-color: green;
+  }
+
+  &.incorrect{
+    border-color: red;
+  }
+}
