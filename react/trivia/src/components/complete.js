@@ -19,7 +19,6 @@ const Complete = () => {
     });
   }, [data]);
 
-  console.log(score);
 
   return (
     <>
