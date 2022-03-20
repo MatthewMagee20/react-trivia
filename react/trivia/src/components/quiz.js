@@ -9,6 +9,7 @@ const Quiz = () => {
   const [questions, setQuestions] = useState([]);
   const [questionsAndAnswers, setQuestionsAndAnswers] = useState([]);
   let distinctQuestions = [];
+  const [loading, setLoading] = useState(true);
 
   const url = "https://opentdb.com/api.php?";
   const location = useLocation();
@@ -20,6 +21,7 @@ const Quiz = () => {
       ).then((data) => data.json());
 
       setQuestions(fetchQuestions.results);
+      setLoading(false);
     }
 
     getQuestions();
@@ -71,11 +73,18 @@ const Quiz = () => {
   window.alert("You haven't answered every question!")
   };
 
+  if(loading){
+    return(
+      <div>
+      <p>Loading...</p>
+      </div>
+    )
+  }
+  else{
   return (
     <>
     <Navbar />
-    <section> 
-      <h1>Quiz</h1>
+    <section className="quiz"> 
       <form onSubmit={handleSubmit}>
         {questions.map((question, index) => (
           <Question
@@ -95,5 +104,6 @@ const Quiz = () => {
     </>
   );
 };
+}
 
 export default Quiz;

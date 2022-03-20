@@ -9,7 +9,7 @@ const QuestionsAndAnswer = ({question, answer, correct_answer}) => {
     return(
         <div className={`question-answer ${check ? "correct" : "incorrect"}`}>
             <h3>{question}</h3>
-            <h2>Answer: {answer}</h2>
+            <p>Answer: {answer}</p>
             <p>Your answer: {correct_answer}</p>
         </div>
     )

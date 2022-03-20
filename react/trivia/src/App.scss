@@ -1,16 +1,16 @@
 :root{
   font-size: 16px;
 
-  --a: #243010;
-  --b: #87A330;
-  --c: #A1C349;
-  --d: #CAD593;
-  --e: #2A3C24;
+  --a: #844da3;
+  --b: #663b94;
+  --c: #431c76;
+  --d: #221c69;
+  --e: #080942;
 
 }
 
 nav{
-  background-color: var(--e);
+  background-color: var(--b);
   padding: 15px 20px;
   position: sticky;
   width: 100%;
@@ -56,7 +56,17 @@ select {
 }
 
 section{
-  padding: 20px;
+  padding: 5vw;
+}
+
+.quiz{
+  form{
+    input{
+      &[type="submit"]{
+      width: 100%;
+      }
+    }
+  }
 }
 
 .form select,
@@ -96,7 +106,7 @@ section{
 
 input.button{
   padding: 12px;
-  background-color: var(--a);
+  background-color: var(--b);
   border-style: none;
   border-radius: 5px;
   color: white;
@@ -105,12 +115,11 @@ input.button{
 
   &:hover{
     background-color: var(--c);
-    color: black;
   }
 }
 
 .question-answer{
-  border: 1px solid;
+  border: 5px solid;
   border-radius: 5px;
   padding: 10px;
   margin: 10px 0px;
@@ -121,5 +130,11 @@ input.button{
 
   &.incorrect{
     border-color: red;
+  }
+}
+
+.complete{
+  h2{
+    padding: 5px 0;
   }
 }

@@ -24,11 +24,11 @@ const Complete = () => {
   return (
     <>
     <Navbar/>
-    <section>
+    <section className="complete">
       <h1>Trivia Complete!</h1>
-      <p>
+      <h2>
         Your score is {score} / {data.length}
-      </p>
+      </h2>
       {data.map((x) => 
       <QuestionAndAnswers question={x.question} answer={x.answer} correct_answer={x.correct_answer} />
       )}
