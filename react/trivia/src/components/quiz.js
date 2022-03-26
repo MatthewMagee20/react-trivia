@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -33,7 +33,6 @@ const Quiz = () => {
   ]);
 
   const handleChange = (data) => {
-
     //copy current state
     let prevState = [...questionsAndAnswers];
 
@@ -61,49 +60,55 @@ const Quiz = () => {
     event.preventDefault();
     let temp = questionsAndAnswers.sort((a, b) => a.id - b.id);
 
-    if(temp.length === questions.length){
+    if (temp.length === questions.length) {
       setQuestionsAndAnswers(temp);
-    return navigate("/complete", {
-      state: {
-        userQuestionsAndAnswers: questionsAndAnswers,
-      },
-    });
-  }
+      return navigate("/complete", {
+        state: {
+          userQuestionsAndAnswers: questionsAndAnswers,
+        },
+      });
+    }
 
-  window.alert("You haven't answered every question!")
+    window.alert("You haven't answered every question!");
   };
 
-  if(loading){
-    return(
+  if (loading) {
+    return (
       <div>
-      <p>Loading...</p>
+        <p>Loading...</p>
       </div>
-    )
+    );
+  } else if (questions.length === 0) {
+    return (
+      <div>
+        <p>No questions found</p>
+        <Link to="/">Return Home</Link>
+      </div>
+    );
+  } else {
+    return (
+      <>
+        <Navbar />
+        <section className="quiz">
+          <form onSubmit={handleSubmit}>
+            {questions.map((question, index) => (
+              <Question
+                id={index}
+                category={question.category}
+                difficulty={question.difficulty}
+                question={question.question}
+                correct_answer={question.correct_answer}
+                incorrect_answers={question.incorrect_answers}
+                handleChange={handleChange}
+                key={index}
+              />
+            ))}
+            <input className="button" type="submit" value="Submit" />
+          </form>
+        </section>
+      </>
+    );
   }
-  else{
-  return (
-    <>
-    <Navbar />
-    <section className="quiz"> 
-      <form onSubmit={handleSubmit}>
-        {questions.map((question, index) => (
-          <Question
-            id={index}
-            category={question.category}
-            difficulty={question.difficulty}
-            question={question.question}
-            correct_answer={question.correct_answer}
-            incorrect_answers={question.incorrect_answers}
-            handleChange={handleChange}
-            key={index}
-          />
-        ))}
-        <input className="button" type="submit" value="Submit" />
-      </form>
-    </section>
-    </>
-  );
 };
-}
 
 export default Quiz;

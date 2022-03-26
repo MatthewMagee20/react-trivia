@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import QuestionAndAnswers from './questionAndAnswer'
+import QuestionAndAnswers from "./questionAndAnswer";
 
 const Complete = () => {
   const location = useLocation();
@@ -19,19 +19,27 @@ const Complete = () => {
     });
   }, [data]);
 
-
   return (
     <>
-    <Navbar/>
-    <section className="complete">
-      <h1>Trivia Complete!</h1>
-      <h2>
-        Your score is {score} / {data.length}
-      </h2>
-      {data.map((x) => 
-      <QuestionAndAnswers question={x.question} answer={x.answer} correct_answer={x.correct_answer} />
-      )}
-    </section>
+      <Navbar />
+      <section className="complete">
+        <h1>Trivia Complete!</h1>
+        <h2>
+          Your score is {score} / {data.length}
+        </h2>
+        <Link className="button" to="/">
+          Home
+        </Link>
+        <div>
+          {data.map((x) => (
+            <QuestionAndAnswers
+              question={x.question}
+              answer={x.answer}
+              correct_answer={x.correct_answer}
+            />
+          ))}
+        </div>
+      </section>
     </>
   );
 };

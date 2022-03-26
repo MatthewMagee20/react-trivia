@@ -61,15 +61,18 @@ export default function App() {
 
   return (
     <>
-    <Navbar />
-    <section className="App">
-      <div className="header">
-        <h1>Welcome to Trivia</h1>
-        <h4>Click Submit to start a game with question varying in difficulty and categories</h4>
-        <h2>Or</h2>
-        <h4>Use the form to tailor a game and test your knowledge!</h4>
-        <h4>Good Luck...</h4>
-      </div>
+      <Navbar />
+      <section className="App">
+        <div className="header">
+          <h1>Welcome to Trivia</h1>
+          <h4>
+            Click Submit to start a game with question varying in difficulty and
+            categories
+          </h4>
+          <h2>Or</h2>
+          <h4>Use the form to tailor a game and test your knowledge!</h4>
+          <h4>Good Luck...</h4>
+        </div>
 
         <form className="form" onSubmit={handleSubmit}>
           <input
@@ -98,7 +101,11 @@ export default function App() {
           </select>
           <input className="button" type="submit" value="Submit" />
         </form>
-    </section>
+        <p>
+          Questions fetched from{" "}
+          <a href="https://opentdb.com/">https://opentdb.com/</a>
+        </p>
+      </section>
     </>
   );
 }
